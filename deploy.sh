@@ -21,12 +21,12 @@ function main_config()
 		passwd root
 	fi
 	read -p "Do you want to create an user?(y/n): " user
-	if [ "$user" = "y" ]; then
+	if [ "$user" = "y" ] || [ "$user" = "Y" ]; then
 		adduser operator$RANDOM
 		usermod -aG sudo operator$RANDOM
-		printf "User operator created!$RANDOM"
+		echo "[+] User operator created!$RANDOM"
 	else 
-		printf no user created!
+		echo "no user created!"
 	fi
 }
 
