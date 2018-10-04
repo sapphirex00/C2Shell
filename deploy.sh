@@ -310,5 +310,7 @@ if [ "$blueteam" = "y" ] || [ "$blueteam" = "Y" ]; then
 	apt-get -y install lynis
 	printf "[+] Security tools installed sucessfully\n"
 fi
+printf "Rememeber to grab your ssh access key. Location -> $HOME/.backups/sshkeys/mysshkeypar"
+sleep 1
 echo "[+] 100% Reached C&C ready to rock ;)"
 finish
