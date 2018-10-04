@@ -225,7 +225,8 @@ if [ "$EUID" -ne 0 ]; then
   	exit 1
 fi
 printf "Starting...\n"
-printf " [*] C2Shell - C&C automated deployment for Red Team Ops v1.0 by Sapphire [*]"
+printf " [*] C2Shell - C&C automated deployment for Red Team Ops v1.0 by Sapphire [*]\n"
+printf "[+] ADVICE: Grab a coffee while the script deploys!"
 sleep 1
 cat banner
 printf "[+] Updating the system\n"
