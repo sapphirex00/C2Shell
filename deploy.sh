@@ -225,7 +225,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 printf "Starting...\n"
 printf " [*] C2Shell - C&C automated deployment for Red Team Ops v1.0 by Sapphire [*]\n"
-printf "[+] ADVICE: Grab a coffee while the script deploys!"
+printf "[+] ADVICE: Grab a coffee while the script deploys!\n"
 sleep 1
 cat banner
 printf "[+] Updating the system\n"
@@ -309,7 +309,7 @@ if [ "$blueteam" = "y" ] || [ "$blueteam" = "Y" ]; then
 	apt-get -y install lynis
 	printf "[+] Security tools installed sucessfully\n"
 fi
-printf "Rememeber to grab your ssh access key. Location -> $HOME/.backups/sshkeys/mysshkeypar"
+printf "Rememeber to grab your ssh access key. Location -> $HOME/.backups/sshkeys/mysshkeypar\n"
 sleep 1
 echo "[+] 100% Reached C&C ready to rock ;)"
 finish
