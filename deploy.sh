@@ -51,7 +51,6 @@ function chkerr()
 {
 	if [ $? -ne 0 ]; then
 		printf "An error has ocurred!"
-		#Revisar
 		exit 2
 	fi
 }
