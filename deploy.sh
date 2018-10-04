@@ -1,7 +1,7 @@
 #!/bin/bash
 #C2_shell is a C2 automated-deployer for red-team/researching/operations pourposes.
 #Some options could be commented. Other are just explainations. Modify the file as needed
-#Still on beta test since November 10th 2017. Tools will be added in future from original repositories.
+#Tools will be added in future from original repositories.
 
 #global vars
 me=$(whoami)
