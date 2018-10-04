@@ -1,6 +1,6 @@
 #!/bin/bash
-#C2_shell is a C2 automated-deployer for red-team/researching/operations pourposes.
-#Some options could be commented. Other are just explainations. Modify the file as needed
+#C2_shell is a C2 automated-deployer for red-team/researching operations.
+#Some options could be commented. Others are just explainations. Modify the file as needed
 #Tools will be added in future from original repositories.
 
 #global vars
