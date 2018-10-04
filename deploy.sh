@@ -172,7 +172,7 @@ function fw_launcher()
 		echo "iptables -A INPUT -i $iface -p tcp --dport 80 -j ACCEP"T>>/$HOME/.firewalling/firewall.sh
 		echo "iptables -A INPUT -i $iface -p tcp --dport 443 -j ACCEPT">>/$HOME/.firewalling/firewall.sh
 	elif [ $fw -eq 3 ]; then
-		read -p "Set hosts" auth_host
+		read -p "Set host" auth_host
 		echo "iptables -A INPUT -i $iface -s $auth_host -p tcp --dport $sshport -j ACCEPT">>/$HOME/.firewalling/firewall.sh
 		echo "iptables -A INPUT -i $iface -s $auth_host -p udp --dport $sshport -j ACCEPT">>/$HOME/.firewalling/firewall.sh
 	elif [ $fw -eq 1 ]; then
