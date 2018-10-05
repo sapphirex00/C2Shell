@@ -67,24 +67,24 @@ function sshd_setup()
 	if [ "$sshport" = "" ]; then
 		sshport=22
 	fi
-	echo "#ssh access port">>$HOME/cfg_samples/sshd_config
-	echo "Port $sshport">>$HOME/cfg_samples/sshd_config
+	echo "#ssh access port">>$HOME/C2Shell/cfg_samples/sshd_config
+	echo "Port $sshport">>$HOME/C2Shell/cfg_samples/sshd_config
 	printf "[+]SSH access listening mode\n"
 	read -p "Listen IPv4. Default yes(y/n): " ssh4
 	if [ "$ssh4" = "" ] || [ "$ssh4" = "y" ]; then
-		echo "ListenAddress 0.0.0.0">>$HOME/cfg_samples/sshd_config
+		echo "ListenAddress 0.0.0.0">>$HOME/C2Shell/cfg_samples/sshd_config
 	else
-		echo "#ListenAddress 0.0.0.0">>$HOME/cfg_samples/sshd_config
+		echo "#ListenAddress 0.0.0.0">>$HOME/cC2Shell/fg_samples/sshd_config
 	fi
 	read -p "Listen IPv6. Default yes(y/n): " ssh4
 	if [ "$ssh6" = "" ] || [ "$ssh6" = "y" ]; then
-		echo "ListenAddress ::">>$HOME/cfg_samples/sshd_config
+		echo "ListenAddress ::">>$HOME/C2Shell/cfg_samples/sshd_config
 	else
-		echo "#ListenAddress ::">>$HOME/cfg_samples/sshd_config
+		echo "#ListenAddress ::">>$HOME/C2Shell/cfg_samples/sshd_config
 	fi
 	cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak
 	printf "[+] Default sshd config file has a backup in ssh directory\n"
-	mv cfg_samples/sshd_config /etc/ssh/sshd_config
+	cp cfg_samples/sshd_config /etc/ssh/sshd_config
 	printf "[+] Config has been replaces succesfully\n"
 	sleep 1
 	rm /etc/ssh/ssh_host*
