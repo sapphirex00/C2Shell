@@ -138,8 +138,8 @@ function crack()
 		wget https://hashcat.net/files/hashcat-4.2.0.7z 
 		p7zip -d hashcat-4.2.0.7z
 		mkdir /opt/hashcat-4.2.0
-		mv $HOME/hashcat-4.2.0/* /opt/hashcat-4.2.0/
-		rmdir $HOME/hashcat-4.2.0
+		mv hashcat-4.2.0/* /opt/hashcat-4.2.0/
+		rmdir hashcat-4.2.0
 		if [ "$ver" = "x86_64" ]; then
 			cp /opt/hashcat-4.2.0/hashcat64.bin /usr/bin
 			ln -s /usr/bin/hashcat64.bin /usr/bin/hashcat
