@@ -84,7 +84,7 @@ function sshd_setup()
 	fi
 	cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak
 	printf "[+] Default sshd config file has a backup in ssh directory\n"
-	cp cfg_samples/sshd_config /etc/ssh/sshd_config
+	cp C2Shell/cfg_samples/sshd_config /etc/ssh/sshd_config
 	printf "[+] Config has been replaces succesfully\n"
 	sleep 1
 	rm /etc/ssh/ssh_host*
@@ -224,7 +224,7 @@ if [ "$EUID" -ne 0 ]; then
   	exit 1
 fi
 printf "Starting...\n"
-printf " [*] C2Shell - C&C automated deployment for Red Team Ops v1.0 by Sapphire [*]\n"
+printf "[*] C2Shell - C&C automated deployment for Red Team Ops v1.0 by Sapphire [*]\n"
 printf "[+] ADVICE: Grab a coffee while the script deploys!\n"
 sleep 1
 cat banner
