@@ -84,14 +84,14 @@ function sshd_setup()
 	fi
 	cp /etc/ssh/sshd_config /etc/ssh/sshd_config_bak
 	printf "[+] Default sshd config file has a backup in ssh directory\n"
-	cp C2Shell/cfg_samples/sshd_config /etc/ssh/sshd_config
+	mv cfg_samples/sshd_config /etc/ssh/sshd_config
 	printf "[+] Config has been replaces succesfully\n"
 	sleep 1
 	rm /etc/ssh/ssh_host*
 	ssh-keygen -N '' -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key
 	ssh-keygen -N '' -t ed25519 -b 256 -f /etc/ssh/ssh_host_ed25519_key
 	printf "[+] New directories created at HOME directory. Named .backups/ .backups/sshkeys/ .firewalling/ /opt/tools\n"
-	printf "[+] New SSH generated keys are"
+	printf "[+] New SSH generated keys generated\n"
 	printf "[!] This keys are for ssh access. Recomendation: put a decent password for your private key ffs\n"
 	ssh-keygen -t rsa -b 4096 -f $HOME/.backups/sshkeys/mysshkeypar 
 	##moving key to gain access with pub auth
@@ -270,10 +270,10 @@ if [ "$version" != "" ]; then
 	echo "deb https://deb.torproject.org/torproject.org xenial main">> /etc/apt/sources.list
 	echo "deb-src https://deb.torproject.org/torproject.org xenial main">> /etc/apt/sources.list
 fi
-version=$(cat /etc/lsb-release | grep -i bioiface)
+version=$(cat /etc/lsb-release | grep -i bionic)
 if [ "$version" != "" ]; then
-	echo "deb https://deb.torproject.org/torproject.org bioiface main">> /etc/apt/sources.list
-	echo "deb-src https://deb.torproject.org/torproject.org bioiface main">> /etc/apt/sources.list
+	echo "deb https://deb.torproject.org/torproject.org bionic main">> /etc/apt/sources.list
+	echo "deb-src https://deb.torproject.org/torproject.org bionic main">> /etc/apt/sources.list
 fi
 version=$(cat /etc/lsb-release | grep -i stretch)
 if [ "$version" != "" ]; then
