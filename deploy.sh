@@ -305,7 +305,7 @@ read -p 'Do you want to install blue team security tools?(rkhunter + chkrootkit 
 if [ "$blueteam" = "y" ] || [ "$blueteam" = "Y" ]; then
 	##installing anti-rootkits. Optional
 	apt-get -y install rkhunter
-	apt-get -y chkrootkit
+	apt-get -y instal chkrootkit
 	apt-get -y install lynis
 	printf "[+] Security tools installed sucessfully\n"
 fi
