@@ -17,4 +17,4 @@ Features of automation:
 * 2 - Execute as root `sudo ./deploy.sh`
 * 3 - Enjoy
 
-#### This script still on version 1.0. Because of that, this repository will be modified to fix bugs and add more cool features in the future in order to make the red team live's easier. Hope you like it
+#### This script still on version 1.0. Because of that, this repository will be modified to fix bugs and add more cool features in the future in order to make the red team life's easier. Hope you like it
