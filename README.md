@@ -20,11 +20,12 @@ Features of automation:
 
 Changelog v2.0:
 *  fixed some errors and typos
-*  Added more tools like: SharpShooter, MetasploitV5, Cactustorch, Veil and more.
+*  Supports Golang 
+*  Added more tools like: Gobuster, SharpShooter, MetasploitV5, Cactustorch, Veil and more.
 
 ## How to use it?
 * 1 - Download or clone the repo
 * 2 - Execute as root `sudo ./deploy.sh`
 * 3 - Enjoy the Op
 
-#### This script still on version 2.0. Because of that, this repository will be modified to fix bugs and add more cool features in the future in order to make the red team life's easier. Hope you like it
+#### This repository will be modified to fix bugs and add more cool features in the future in order to make the red team life's easier. Hope you like it
