@@ -102,19 +102,29 @@ function sshd_setup()
 function red_tools()
 {
 	printf "[*] Installing offensive tools in /opt/tools\n"
+	git clone https://github.com/OJ/gobuster
+  	wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz 
+  	tar -xvf go1.8.3.linux-amd64.tar.gz && mv go/ /usr/local
+ 	export GOROOT=/usr/local/go
+  	export GOPATH=$HOME/work/goproj
+  	export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+	version
+	printf"[+] Go added\n"
+	sleep 2
+	chkerr
 	git clone https://github.com/trustedsec/unicorn /opt/tools/
 	git clone https://github.com/PowerShellMafia/PowerSploit /opt/tools/
 	git clone https://github.com/EmpireProject/Empire /opt/tools/
-    git clone https://github.com/laramies/theHarvester /opt/tools/
-    git clone https://github.com/mdsecactivebreach/SharpShooter /opt/tools/
-    git clone https://github.com/mdsecactivebreach/CACTUSTORCH /opt/tools/
-    git clone https://github.com/Veil-Framework/Veil /opt/tools/
-    git clone https://github.com/nidem/kerberoast /opt/tools/
-    git clone https://github.com/securemode/Invoke-Apex /opt/tools/
-    git clone https://github.com/nettitude/PoshC2 /opt/tools/
-    git clone https://github.com/UndeadSec/EvilURL /opt/tools/
-    apt-get install curl -y
-    curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+    	git clone https://github.com/laramies/theHarvester /opt/tools/
+    	git clone https://github.com/mdsecactivebreach/SharpShooter /opt/tools/
+    	git clone https://github.com/mdsecactivebreach/CACTUSTORCH /opt/tools/
+    	git clone https://github.com/Veil-Framework/Veil /opt/tools/
+    	git clone https://github.com/nidem/kerberoast /opt/tools/
+    	git clone https://github.com/securemode/Invoke-Apex /opt/tools/
+    	git clone https://github.com/nettitude/PoshC2 /opt/tools/
+    	git clone https://github.com/UndeadSec/EvilURL /opt/tools/
+    	apt-get install curl -y
+    	curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 	update
 	cd /opt/tools/Empire/setup && ./install.sh
 	printf "[+] Unicorn, PowerSploit, Empire installed\n"
