@@ -50,7 +50,7 @@ function c2_setup()
 function chkerr() 
 {
 	if [ $? -ne 0 ]; then
-		printf "An error has ocurred!"
+		printf "An error has ocurred!\n"
 		exit 2
 	fi
 }
@@ -102,9 +102,19 @@ function sshd_setup()
 function red_tools()
 {
 	printf "[*] Installing offensive tools in /opt/tools\n"
-	git clone https://github.com/trustedsec/unicorn /opt/tools/unicorn
-	git clone https://github.com/PowerShellMafia/PowerSploit /opt/powersploit
-	git clone https://github.com/EmpireProject/Empire /opt/tools/Empire
+	git clone https://github.com/trustedsec/unicorn /opt/tools/
+	git clone https://github.com/PowerShellMafia/PowerSploit /opt/tools/
+	git clone https://github.com/EmpireProject/Empire /opt/tools/
+    git clone https://github.com/laramies/theHarvester /opt/tools/
+    git clone https://github.com/mdsecactivebreach/SharpShooter /opt/tools/
+    git clone https://github.com/mdsecactivebreach/CACTUSTORCH /opt/tools/
+    git clone https://github.com/Veil-Framework/Veil /opt/tools/
+    git clone https://github.com/nidem/kerberoast /opt/tools/
+    git clone https://github.com/securemode/Invoke-Apex /opt/tools/
+    git clone https://github.com/nettitude/PoshC2 /opt/tools/
+    git clone https://github.com/UndeadSec/EvilURL /opt/tools/
+    apt-get install curl -y
+    curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 	update
 	cd /opt/tools/Empire/setup && ./install.sh
 	printf "[+] Unicorn, PowerSploit, Empire installed\n"
@@ -120,7 +130,6 @@ function red_tools()
 	apt-get -y install whois
 	add-apt-repository ppa:pi-rho/security
 	update
-	apt-get -y install whatweb
 	apt-get -y install nmap
 	apt-get -y install masscan
 	apt-get -y install vim
@@ -196,10 +205,8 @@ function fw_launcher()
 	echo "iptables -A INPUT -i eth0 -p icmp --icmp-type echo-request -m hashlimit --hashlimit-name ping --hashlimit-above 1/s --hashlimit-burst 2 --hashlimit-mode srcip -j DROP">>/$HOME/.firewalling/firewall.sh
 	echo "iptables -A INPUT -i $iface -p tcp -s 0.0.0.0/0 --dport 1:1024 -j DROP">>/$HOME/.firewalling/firewall.sh
 	echo "iptables -A INPUT -i $iface -p udp -s 0.0.0.0/0 --dport 1:1024 -j DROP">>/$HOME/.firewalling/firewall.sh
-	echo "iptables -A INPUT -i $iface -p tcp -s 0.0.0.0/0 --dport 1025:13371 -j DROP">>/$HOME/.firewalling/firewall.sh
-	echo "iptables -A INPUT -i $iface -p udp -s 0.0.0.0/0 --dport 1025:13371 -j DROP">>/$HOME/.firewalling/firewall.sh
-	echo "iptables -A INPUT -i $iface -p tcp -s 0.0.0.0/0 --dport 13373:65535 -j DROP">>/$HOME/.firewalling/firewall.sh
-	echo "iptables -A INPUT -i $iface -p udp -s 0.0.0.0/0 --dport 13373:65535 -j DROP">>/$HOME/.firewalling/firewall.sh
+	echo "iptables -A INPUT -i $iface -p tcp -s 0.0.0.0/0 --dport 1025:65535 -j DROP">>/$HOME/.firewalling/firewall.sh
+	echo "iptables -A INPUT -i $iface -p udp -s 0.0.0.0/0 --dport 1025:65535 -j DROP">>/$HOME/.firewalling/firewall.sh
 	chmod 755 $HOME/.firewalling/firewall.sh
 	iptables-save
 	iptables-save>/etc/iptables.rules
@@ -294,7 +301,7 @@ if [ "$vpn" = "y" ] || [ "$vpn" = "Y" ]; then
 	apt-get -y install easy-rsa
 	apt-get -y install openvpn
 else
-	printf "[-] vpn won't be installed"
+	printf "[-] vpn won't be installed\n"
 fi
 update
 ##firewalling
