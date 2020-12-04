@@ -1,7 +1,5 @@
 # C2 Shell
-C2Shell is a script designed for fast Command 'n Control deploys.
-
-#### This tool is intended for Red Team Ops
+C2Shell is a script designed for fast Command and Control deployments.
 
 ## How it works?
 * Written in shell script
